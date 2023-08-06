@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s;
+  }
+  
+  .navbar--hidden {
+    top: -100px;
+  }
+@tailwind utilities;

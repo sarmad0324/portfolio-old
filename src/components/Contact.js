@@ -1,0 +1,133 @@
+import { useState } from "react"
+import emailjs from '@emailjs/browser'
+
+const Contact = (props) => {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("")
+  const [role, setRole] = useState("role");
+
+  const clearForm = () => { 
+    setName(""); 
+    setComment(""); 
+    setEmail(""); 
+    setRole("---"); 
+  }; 
+  function invalid(){
+    return(
+      name && email && role !== "---"  && comment.length > 5
+    )
+  }
+  
+
+  const handleSubmit = (e) => { 
+    e.preventDefault(); 
+
+    emailjs.sendForm('service_1au3h13','template_93eud3q','#myform', '2_HnGR0qPrdrYw7Mp' )
+
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert(`Thanks ${name} for submitting the form, we will get in touch with you soon!`)
+        clearForm();
+      }, function(error) {
+         console.log('FAILED...', error);
+         alert('Oops! something went wrong!')
+      });
+  }
+     
+   
+    
+  
+ 
+
+  return (
+    <section className=" body-font relative bg-gray-900 text-slate-100 " id="contact">
+      <div className="container px-5 py-24 mx-auto">
+
+        <div className="flex flex-col text-center w-full mb-12">
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 ">Contact Me</h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Leave a message to get in touch with me.</p>
+        </div>
+
+        <form 
+          className="lg:w-1/2 md:w-2/3 mx-auto" 
+          onSubmit={handleSubmit}
+          id="myform"
+        >
+          
+            <div className="p-2 w-full  ">
+              <div className="relative">
+                <label htmlFor="name" className="leading-7 text-sm ">Name</label>
+                <input 
+                  type="text"
+                  name="name"
+                  value={name} 
+                  onChange={(e) => {setName(e.target.value)}}
+                  className="w-full bg-gray-800  rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                  "
+                />
+              </div>
+            </div>
+            <div className="p-2 w-full ">
+              <div className="relative">
+                <label htmlFor="email" className="leading-7 text-sm ">Email</label>
+                <input 
+                  type="email"
+                  name='email'
+                  value={email} 
+                  onChange={(e) => {setEmail(e.target.value)}}
+                  className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out invalid:border-red-700" 
+                />
+              </div>
+            </div>
+            <div className="p-2 w-full">
+              <label className="leading-7 text-sm ">
+                Type of enquiry
+              </label>
+              <select 
+                value={role}
+                name="role"
+                onChange={(e) => {setRole(e.target.value)}}
+                className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-slate-900  text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              >
+                <option>---</option>
+                <option >Freelance project proposal</option>
+                <option >Open source consultancy session</option>
+                <option >Business Offer</option>
+              </select>
+            </div>
+            <div className="p-2 w-full">
+              <div className="relative">
+                <label htmlFor="message" className="leading-7 text-sm ">Message</label>
+                <textarea 
+                  name="comment"
+                  value={comment}
+                  onChange={(e) => {setComment(e.target.value)}}
+                  className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+            </div>
+            <div className="p-2 w-full">
+              <button 
+                className="text-center bg-indigo-800 border-0 py-2 px-8 focus:outline-none w-full hover:bg-indigo-600 rounded text-lg disabled:cursor-not-allowed" 
+                type="submit"
+                disabled={!invalid()}
+              >
+                Submit
+              </button>
+            </div>
+
+        </form>
+
+        <div className="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
+          <a className="text-indigo-800" href="mailto:sarmadirfan78@gmail.com">sarmadirfan78@gmail.com</a>
+          <p>Sarmad Irfan | © 2023</p>
+        </div>
+
+      </div>
+    </section>
+  )
+}
+
+export default Contact
