@@ -5,8 +5,8 @@ const Card = (props) => {
       
             
             <div className="w-11/12 m-auto " >
-                <div className="h-full rounded-xl overflow-hidden  bg-gray-800 text-gray-500">
-                    <img className="lg:h-80 md:h-64 2xl:h-96 w-full object-cover object-center hover:border-gray-400" src={props.img} alt="blog" />
+                <div className="h-full rounded-xl overflow-hidden  bg-gray-950 text-gray-500">
+                    <img className="h-52 lg:h-80 md:h-64 2xl:h-96 w-full object-cover object-center hover:border-gray-400" src={props.img} alt="blog" />
                     <div className="p-6">
                         <h1 className="title-font text-lg  mb-3 font-bold text-slate-200">{props.title}</h1>
                         <p className="leading-relaxed mb-3">{props.detail}</p>

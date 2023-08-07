@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <div className="bg-gray-900 text-slate-100" id="/">
+    <div className="bg-slate-800 text-slate-100" id="/">
       <div className="w-80 m-auto text-center py-36 md:w-3/5 md:m-auto md:py-44 xl:py-56">
         <img alt="profile" src={require("../assets/profile.png")}
           className="border rounded-full border-gray-600 w-48 h-48 m-auto md:w-60 md:h-60 hover:border-gray-900"
@@ -13,7 +13,7 @@ const Home = () => {
           Download CV</button>
         </a> 
       </div>
-      <hr className='w-4/5 m-auto border-gray-800'></hr>
+      <hr className='w-4/5 m-auto border-gray-900'></hr>
     </div>
   )
 }

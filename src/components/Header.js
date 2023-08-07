@@ -27,12 +27,12 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos, visible]);
+  });
   
   
 
   return (
-    <header className={`md:flex md:justify-between text-slate-200 bg-gray-950 navbar ${visible ? '' : 'navbar--hidden'}`} >
+    <header className={`md:flex md:justify-between text-slate-200 bg-gray-900 bg-opacity-70 navbar ${visible ? '' : 'navbar--hidden'}`} >
        <div className='flex justify-center md:px-14'>
         <a href="https://www.linkedin.com/in/sarmad-irfan/" target="blank"><i className="fa-brands fa-linkedin hover:text-xl"  style={icon}></i></a>
         <a href="https://www.instagram.com/sarmxd_/" target="blank"><i className="fa-brands fa-instagram hover:text-xl"style={icon}></i></a>
