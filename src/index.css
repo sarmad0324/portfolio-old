@@ -1,5 +1,11 @@
 @tailwind base;
+
 @tailwind components;
+
+.app{
+  @apply bg-[#182747] text-[#EBEBEB]
+}
+
 .navbar {
     position: fixed;
     top: 0;

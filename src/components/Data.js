@@ -9,7 +9,7 @@ const Data = [
         title :"Todo tracker",
         detail : "I have built a modern todo tracker to make todo list of all my daily tasks. I have used Html, CSS, Javascript and React in it.",
         img : img1,
-        link: "https://my-todotracker.netlify.app/"
+        link: "https://mytodo-tracker.netlify.app/"
     },
     {
         key:1,

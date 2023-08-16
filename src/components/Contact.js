@@ -14,11 +14,6 @@ const Contact = (props) => {
     setEmail(""); 
     setRole("---"); 
   }; 
-  function invalid(){
-    return(
-      name && email && comment.length > 5
-   )
-  }
 
   const handleSubmit = (e) => { 
     e.preventDefault(); 
@@ -36,7 +31,7 @@ const Contact = (props) => {
   }
 
   return (
-    <section className=" body-font relative bg-slate-800 text-slate-100 " id="contact">
+    <section id="contact">
       <div className="container px-5 py-24 mx-auto">
 
         <div className="flex flex-col text-center w-full mb-12">
@@ -58,7 +53,7 @@ const Contact = (props) => {
                   name="name"
                   value={name} 
                   onChange={(e) => {setName(e.target.value)}}
-                  className="w-full bg-gray-800  rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                  className="w-full bg-slate-900 rounded border border-slate-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
                   aria-required:border-red-800"
                   required
                 />
@@ -72,7 +67,8 @@ const Contact = (props) => {
                   name='email'
                   value={email} 
                   onChange={(e) => {setEmail(e.target.value)}}
-                  className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-outzzz aria-required:border-red-800" 
+                  className="w-full bg-slate-900 rounded border border-slate-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                  aria-required:border-red-800" 
                   required
                 />
               </div>
@@ -85,7 +81,8 @@ const Contact = (props) => {
                 value={role}
                 name="role"
                 onChange={(e) => {setRole(e.target.value)}}
-                className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-slate-900  text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                className="w-full bg-slate-900 rounded border border-slate-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                aria-required:border-red-800"
                 required
               >
                 <option>---</option>
@@ -101,16 +98,16 @@ const Contact = (props) => {
                   name="comment"
                   value={comment}
                   onChange={(e) => {setComment(e.target.value)}}
-                  className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out aria-required:border-red-800"
+                  className="w-full bg-slate-900 rounded border border-slate-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                  aria-required:border-red-800"
                   required
                 />
               </div>
             </div>
             <div className="p-2 w-full">
               <button 
-                className="text-center bg-indigo-800 border-0 py-2 px-8 focus:outline-none w-full hover:bg-indigo-600 rounded text-lg disabled:cursor-not-allowed" 
+                className="text-center bg-[#000000] border-0 py-2 px-8 w-full rounded text-lg" 
                 type="submit"
-                disabled={!invalid()}
               >
                 Submit
               </button>
@@ -119,7 +116,7 @@ const Contact = (props) => {
         </form>
 
         <div className="p-2 w-full pt-8 mt-8 border-t border-gray-900 text-center">
-          <a className="text-indigo-800" href="mailto:sarmadirfan78@gmail.com">sarmadirfan78@gmail.com</a>
+          <a className="text-gray-400" href="mailto:sarmadirfan78@gmail.com">sarmadirfan78@gmail.com</a>
           <p>Sarmad Irfan | © 2023</p>
         </div>
 
